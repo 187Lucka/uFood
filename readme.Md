@@ -324,7 +324,7 @@ Authorization: Bearer <JWT_TOKEN>
 
 ## 📄 Licence
 
-Ce projet est développé dans le cadre d'un cours universitaire.
+Ce projet a été développé dans le cadre du cours **Développement d'applications Web (GLO3102)** à l'**Université Laval**.
 
 ---
 
