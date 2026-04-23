@@ -1,0 +1,618 @@
+/* ========================================
+   MAIN CONTAINER - MAX 1600PX CENTRÉ
+======================================== */
+.restaurant-details {
+    padding: 2rem 0;
+    min-height: calc(100vh - var(--header-height));
+    background-color: var(--background-color);
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.restaurant-details-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/* ========================================
+   BACK BUTTON
+======================================== */
+.back-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    padding: 0.875rem 1.75rem;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.back-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+/* ========================================
+   UNIFIED CARD (COMME USER PAGE)
+======================================== */
+.unified-restaurant-card {
+    background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+    border-radius: 25px;
+    padding: 0;
+    box-shadow: 0 12px 35px rgba(44, 24, 16, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    transition: var(--transition);
+    overflow: hidden;
+}
+
+.unified-restaurant-card:hover {
+    box-shadow: 0 15px 45px rgba(44, 24, 16, 0.15);
+    border-color: var(--primary-color);
+}
+
+/* ========================================
+   HERO SECTION
+======================================== */
+.restaurant-hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image-container {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(44, 24, 16, 0.4) 0%,
+        rgba(44, 24, 16, 0.85) 100%
+    );
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 3rem;
+    color: white;
+}
+
+.restaurant-name {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.8);
+    font-family: 'Georgia', serif;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    color: white;
+}
+
+.restaurant-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.rating-section {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.rating-display {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    padding: 0.875rem 1.5rem;
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.stars {
+    color: #ffd700;
+    font-size: 1.5rem;
+}
+
+.rating-number {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: white;
+}
+
+.price-display {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(12px);
+    color: white;
+    padding: 0.875rem 1.5rem;
+    border-radius: 15px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+.action-buttons-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.visit-btn,
+.add-to-list-btn {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    border: none;
+    padding: 0.875rem 1.75rem;
+    border-radius: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.visit-btn:hover,
+.add-to-list-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+.visit-btn.visited {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+}
+
+.visit-btn.visited:hover {
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+}
+
+.add-to-list-btn .btn-icon {
+    font-size: 1.2rem;
+}
+
+/* ========================================
+   CONTENT SECTIONS
+======================================== */
+.restaurant-content {
+    padding: 3rem;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2c1810;
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Georgia', serif;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.info-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid rgba(212, 165, 116, 0.2);
+}
+
+/* ========================================
+   INFO GRID
+======================================== */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.info-card {
+    background: linear-gradient(135deg, var(--background-light), #ffffff);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    transition: all 0.3s ease;
+    animation: slideInUp 0.6s ease-out;
+    animation-fill-mode: both;
+}
+
+.info-card:nth-child(1) { animation-delay: 0.1s; }
+.info-card:nth-child(2) { animation-delay: 0.2s; }
+.info-card:nth-child(3) { animation-delay: 0.3s; }
+.info-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(44, 24, 16, 0.15);
+    border-color: var(--primary-color);
+    background: linear-gradient(135deg, #ffffff, var(--background-light));
+}
+
+.info-header h3 {
+    color: #2c1810;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif;
+}
+
+.info-text {
+    color: #2c1810;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+.action-btn,
+.phone-btn,
+a.action-btn,
+a.phone-btn {
+    background: transparent;
+    color: #2c1810 !important;
+    border: 2px solid rgba(212, 165, 116, 0.5);
+    padding: 0.625rem 1.25rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    text-align: center;
+    box-shadow: none;
+    width: fit-content;
+}
+
+.action-btn:hover,
+.phone-btn:hover,
+a.action-btn:hover,
+a.phone-btn:hover {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white !important;
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+}
+
+/* ========================================
+   GENRES
+======================================== */
+.genres-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+.genre-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   COORDINATES
+======================================== */
+.coordinates p {
+    color: #2c1810;
+    margin-bottom: 0.5rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ========================================
+   MAP SECTION
+======================================== */
+.map-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid rgba(212, 165, 116, 0.2);
+}
+
+/* ========================================
+   HOURS SECTION
+======================================== */
+.hours-section {
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid rgba(212, 165, 116, 0.2);
+}
+
+.hours-card {
+    background: linear-gradient(135deg, var(--background-light), #ffffff);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.hours-grid {
+    display: grid;
+    gap: 0;
+}
+
+.hours-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.day-name {
+    font-weight: 700;
+    color: #2c1810;
+    font-size: 1.1rem;
+}
+
+.hours-time {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.hours-time.open {
+    color: #4CAF50;
+}
+
+.hours-time.closed {
+    color: #dc3545;
+}
+
+/* ========================================
+   PHOTO GALLERY
+======================================== */
+.photos-section {
+    margin-bottom: 3rem;
+}
+
+.photo-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.photo-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-photo {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+/* ========================================
+   ERROR STATE
+======================================== */
+.error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem;
+}
+
+.error-card {
+    background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+    border-radius: 25px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 12px 35px rgba(44, 24, 16, 0.1);
+    border: 1px solid rgba(212, 165, 116, 0.2);
+    max-width: 600px;
+}
+
+.error-card h2 {
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    font-family: 'Georgia', serif;
+}
+
+.error-card p {
+    color: var(--text-dark);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 1024px) {
+    .restaurant-details-container {
+        padding: 0 1.5rem;
+    }
+
+    .restaurant-content {
+        padding: 2rem;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .restaurant-details {
+        padding: 1rem 0;
+    }
+
+    .restaurant-details-container {
+        padding: 0 1rem;
+    }
+
+    .hero-content {
+        padding: 2rem 1.5rem;
+    }
+
+    .restaurant-name {
+        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .restaurant-content {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .rating-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .action-buttons-container {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .visit-btn,
+    .add-to-list-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .info-grid {
+        gap: 1.25rem;
+    }
+
+    .info-card {
+        padding: 1.5rem;
+    }
+
+    .hours-card {
+        padding: 1.5rem;
+    }
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-image-container {
+        height: 300px;
+    }
+
+    .hero-content {
+        padding: 1.5rem 1rem;
+    }
+
+    .restaurant-name {
+        font-size: 2rem;
+    }
+
+    .restaurant-content {
+        padding: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .info-card {
+        padding: 1.25rem;
+    }
+
+    .error-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .error-card h2 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,293 @@
+/* ========================================
+   CUSTOM LIST CONTAINER
+======================================== */
+.custom-list {
+    background: linear-gradient(135deg, #ffffff 0%, #faf8f5 100%);
+    border: 2px solid rgba(212, 165, 116, 0.25);
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(44, 24, 16, 0.05);
+}
+
+.custom-list:hover {
+    box-shadow: 0 6px 20px rgba(44, 24, 16, 0.12);
+    border-color: var(--primary-color);
+}
+
+/* ========================================
+   LIST HEADER & ACTIONS
+======================================== */
+.custom-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.custom-list-header:hover {
+    background: rgba(212, 165, 116, 0.08);
+}
+
+.custom-list-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.list-name {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    font-family: 'Georgia', serif;
+}
+
+.restaurant-count {
+    font-size: 0.9rem;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-weight: 500;
+}
+
+/* Edit Input (si utilisé inline) */
+.custom-list-edit-input {
+    padding: 0.5rem 0.75rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 300px;
+    font-family: 'Georgia', serif;
+}
+
+.custom-list-edit-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.2);
+}
+
+/* ========================================
+   ACTION BUTTONS
+======================================== */
+.custom-list-actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.action-btn {
+    background: white;
+    border: 2px solid rgba(212, 165, 116, 0.3);
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--secondary-color);
+    flex-shrink: 0;
+}
+
+.action-btn:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+}
+
+.edit-btn {
+    font-size: 1.15rem;
+}
+
+.delete-btn {
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.delete-btn:hover {
+    background: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}
+
+.toggle-btn {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* ========================================
+   LIST CONTENT (EXPANDED)
+======================================== */
+.custom-list-content {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 1000px;
+    }
+}
+
+.custom-list-loading,
+.custom-list-empty {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-style: italic;
+    background: rgba(212, 165, 116, 0.05);
+    border-radius: 10px;
+}
+
+/* ========================================
+   RESTAURANT ITEMS IN LIST
+======================================== */
+.custom-list-restaurants {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.custom-list-restaurant-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.875rem 1.25rem;
+    margin-bottom: 0.75rem;
+    background: white;
+    border: 2px solid rgba(212, 165, 116, 0.2);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.custom-list-restaurant-item:hover {
+    border-color: var(--primary-color);
+    background: rgba(212, 165, 116, 0.05);
+    transform: translateX(5px);
+    box-shadow: 0 2px 8px rgba(44, 24, 16, 0.08);
+}
+
+.custom-list-restaurant-item:last-child {
+    margin-bottom: 0;
+}
+
+.restaurant-name-link {
+    flex: 1;
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.restaurant-name-link:hover {
+    color: var(--primary-color);
+}
+
+.remove-restaurant-btn {
+    background: white;
+    border: 2px solid rgba(220, 53, 69, 0.3);
+    font-size: 1.4rem;
+    color: #dc3545;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.remove-restaurant-btn:hover {
+    background: #dc3545;
+    border-color: #dc3545;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+======================================== */
+@media (max-width: 768px) {
+    .custom-list-header {
+        padding: 1rem 1.25rem;
+    }
+
+    .list-name {
+        font-size: 1.1rem;
+    }
+
+    .restaurant-count {
+        font-size: 0.85rem;
+    }
+
+    .custom-list-edit-input {
+        width: 100%;
+        max-width: 250px;
+        font-size: 0.95rem;
+    }
+
+    .action-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 1.1rem;
+    }
+
+    .custom-list-content {
+        padding: 0 1rem 1rem 1rem;
+    }
+
+    .custom-list-restaurant-item {
+        padding: 0.75rem 1rem;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .restaurant-name-link {
+        font-size: 0.95rem;
+    }
+
+    .remove-restaurant-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .custom-list-header {
+        padding: 0.875rem 1rem;
+    }
+
+    .list-name {
+        font-size: 1rem;
+    }
+
+    .custom-list-actions {
+        gap: 0.25rem;
+    }
+
+    .action-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .custom-list-restaurant-item {
+        padding: 0.625rem 0.875rem;
+    }
+}

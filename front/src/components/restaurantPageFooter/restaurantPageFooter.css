@@ -1,0 +1,70 @@
+.restaurant-page-footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.pagination-button {
+    background: #2c1810;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.pagination-button:hover {
+    background: #d4a574;
+    transform: translateY(-1px);
+}
+
+.page-numbers {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.page-number {
+    background: #2c1810;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.page-number:hover {
+    background: #d4a574;
+    transform: translateY(-1px);
+}
+
+.page-number.active {
+    background: #d4a574;
+    color: white;
+    font-weight: 600;
+}
+
+.ellipsis {
+    color: #666;
+    font-size: 14px;
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+}

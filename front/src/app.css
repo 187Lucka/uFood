@@ -1,0 +1,40 @@
+:root {
+    --primary-color: #d4a574;
+    --secondary-color: #2c1810;
+    --background-color: #ffe4bb;
+    --accent-color: #e8b86d;
+    --text-light: #ffffff;
+    --text-dark: #2c1810;
+    --background-light: #faf8f5;
+    --shadow: rgba(44, 24, 16, 0.15);
+    --transition: all 0.3s ease;
+    --header-height: 80px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+#app {
+  height: 100%;
+}
+
+.app {
+  font-family: 'Arial', sans-serif;
+  background: var(--background-color);
+  color: var(--text-dark);
+  display: flex;
+  padding: 0;
+  margin: 0;
+  flex-direction: column;
+  min-height: 100vh;
+}
